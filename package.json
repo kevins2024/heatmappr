@@ -1,0 +1,11 @@
+{
+  "name": "heatmappr",
+  "private": true,
+  "scripts": {
+    "dev:client": "cd client && npm run dev",
+    "dev:server": "cd server && node --env-file=.env index.js",
+    "db:schema": "psql $DATABASE_URL -f data/schema.sql",
+    "db:seed": "node data/ingest_counties.js && node data/ingest_sales_tax.js && node data/ingest_income_tax.js",
+    "boundaries": "bash data/download_boundaries.sh"
+  }
+}
